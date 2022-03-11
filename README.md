@@ -4,6 +4,10 @@ A Flutter app to demonstrate the usage of CustomPainter, flutter_boxy, and stagg
 #
 ## Demo
 
+
+https://user-images.githubusercontent.com/36048466/157918508-535f68d5-349b-49bc-b271-25b31aefae54.mp4
+
+
 #
 ## Challenges
 
