@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 
 class TimeLineItem {
-  final String label;
-  final Color color;
+  final Widget widget;
   final bool isActive;
+  final Animation<double>? animation;
 
-  TimeLineItem(
-      {required this.label, required this.color, this.isActive = true});
+  TimeLineItem({required this.widget, this.isActive = true, this.animation});
 }

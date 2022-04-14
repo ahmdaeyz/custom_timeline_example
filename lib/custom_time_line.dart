@@ -1,5 +1,4 @@
 import 'package:boxy/boxy.dart';
-import 'package:custom_timeline_example/time_line_data.dart';
 import 'package:custom_timeline_example/time_line_delegate.dart';
 import 'package:custom_timeline_example/time_line_item.dart';
 import 'package:flutter/material.dart';
@@ -24,7 +23,7 @@ class _CustomTimeLineState extends State<CustomTimeLine>
     with SingleTickerProviderStateMixin {
   late final AnimationController controller;
   final scaleTween = Tween<double>(begin: 0.0, end: 1.0);
-  List<TimeLineData> animatedContent = [];
+  List<TimeLineItem> animatedContent = [];
   List<Animation<double>> connectorsAnimations = [];
 
   @override
@@ -48,10 +47,9 @@ class _CustomTimeLineState extends State<CustomTimeLine>
         ),
       );
       if (i % 3 == 0) {
-        final item = widget.content[i~/3];
-        animatedContent.add(TimeLineData(
-            label: item.label,
-            color: item.color,
+        final item = widget.content[i ~/ 3];
+        animatedContent.add(TimeLineItem(
+            widget: item.widget,
             isActive: item.isActive,
             animation: itemAnimation));
       } else {
@@ -68,6 +66,7 @@ class _CustomTimeLineState extends State<CustomTimeLine>
             content: animatedContent,
             activeColor: widget.activeColor,
             connectorsAnimations: connectorsAnimations,
+            shift: 0.5,
             inactiveColor: widget.inactiveColor));
   }
 }
